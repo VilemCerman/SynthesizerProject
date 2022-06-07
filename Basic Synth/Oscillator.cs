@@ -26,7 +26,7 @@ namespace Basic_Synth
                 Location = new Point(65, 15),
                 Text = "Square",
                 UseVisualStyleBackColor = true
-        });
+            });
             this.Controls.Add(new Button()
             {
                 Name = "Saw",
@@ -47,40 +47,36 @@ namespace Basic_Synth
                 Location = new Point(65, 50),
                 Text = "Noise",
                 UseVisualStyleBackColor = true
-
             });
-            //this.Controls.Add(new TextBox()
-            //{
-            //    Name = "Pitch",
-            //    Location = new Point(120, 50),
-            //    Text = "1"
-            //});
 
-            TrackBar PitchShift_TrB = new TrackBar();
-            PitchShift_TrB.Name = "PitchShift";
-            
-            PitchShift_TrB.Location = new Point(175, 8);
-            PitchShift_TrB.Size = new Size(56, 90);
-            PitchShift_TrB.Orientation = Orientation.Vertical;
-            PitchShift_TrB.TickStyle = TickStyle.TopLeft;
-            PitchShift_TrB.Maximum = 12;
-            PitchShift_TrB.Minimum = -12;
-            PitchShift_TrB.TickFrequency = 2;
+            TrackBar PitchShift_TrB = new TrackBar
+            {
+                Name = "PitchShift",
+                Location = new Point(175, 8),
+                Size = new Size(56, 90),
+                Orientation = Orientation.Vertical,
+                TickStyle = TickStyle.TopLeft,
+                Maximum = 12,
+                Minimum = -12,
+                TickFrequency = 2,
+                Parent = this
+            };
             PitchShift_TrB.Scroll += PitchShiftTrB_Scroll;
-            PitchShift_TrB.Parent = this;
 
-            TrackBar Volume_TrB = new TrackBar();
-            Volume_TrB.Name = "Volume";
-            Volume_TrB.Location = new Point(220, 8);
-            Volume_TrB.Size = new Size(56, 90);
-            Volume_TrB.Orientation = Orientation.Vertical;
-            Volume_TrB.TickStyle = TickStyle.TopLeft;
-            Volume_TrB.Maximum = 10;
-            Volume_TrB.Minimum = 0;
-            Volume_TrB.TickFrequency = 1;
-            Volume_TrB.Value = 10;
+            TrackBar Volume_TrB = new TrackBar()
+            {
+                Name = "Volume",
+                Location = new Point(220, 8),
+                Size = new Size(56, 90),
+                Orientation = Orientation.Vertical,
+                TickStyle = TickStyle.TopLeft,
+                Maximum = 10,
+                Minimum = 0,
+                TickFrequency = 1,
+                Value = 10,
+                Parent = this
+            };
             Volume_TrB.Scroll += VolumeTrB_Scroll;
-            Volume_TrB.Parent = this;
 
             foreach (Control control in this.Controls.OfType<Button>())
             {
@@ -88,15 +84,6 @@ namespace Basic_Synth
                 control.Font = new Font("Microsoft Sans Serif", 6.5f);
                 control.Click += WaveButton_Click;
             }
-
-            
-            //foreach (Control control in this.Controls.OfType<TextBox>())
-            //{
-            //    control.Size = new Size(50, 30);
-            //    control.Font = new Font("Microsoft Sans Serif", 6.5f);
-            //    control.KeyDown += PitchTb_KeyDown;
-            //}
-
         }
 
         public WaveForm WaveForm { get; private set; }
@@ -128,23 +115,5 @@ namespace Basic_Synth
             TrackBar TrB = (TrackBar)sender;
             Volume = TrB.Value / (double)10;
         }
-
-        //private void PitchTb_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    TextBox textBox = (TextBox)sender;
-        //    if (int.TryParse(textBox.Text, out int result) && Convert.ToInt32(textBox.Text) >= -12 && Convert.ToInt32(textBox.Text) <= 12)
-        //    {
-        //        PitchShift = result;
-        //    }
-        //    if (e.KeyCode == Keys.Enter)
-        //    {
-        //        foreach (TextBox TB in this.Controls.OfType<TextBox>())
-        //        {
-
-        //        }
-        //    }
-        //    //this.Controls.OfType<TextBox>() = null;
-        //    //this.ActiveControl = null;
-        //}
     }
 }
