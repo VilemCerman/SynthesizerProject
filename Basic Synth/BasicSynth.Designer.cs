@@ -29,43 +29,9 @@ namespace Basic_Synth
         /// </summary>
         private void InitializeComponent()
         {
-            this.oscillator5 = new Basic_Synth.Oscillator();
-            this.oscillator4 = new Basic_Synth.Oscillator();
-            this.oscillator3 = new Basic_Synth.Oscillator();
             this.oscillator2 = new Basic_Synth.Oscillator();
             this.oscillator1 = new Basic_Synth.Oscillator();
-            this.oscillator9 = new Basic_Synth.Oscillator();
             this.SuspendLayout();
-            // 
-            // oscillator5
-            // 
-            this.oscillator5.BackColor = System.Drawing.Color.Purple;
-            this.oscillator5.Location = new System.Drawing.Point(283, 119);
-            this.oscillator5.Name = "oscillator5";
-            this.oscillator5.Size = new System.Drawing.Size(264, 100);
-            this.oscillator5.TabIndex = 8;
-            this.oscillator5.TabStop = false;
-            this.oscillator5.Text = "oscillator5";
-            // 
-            // oscillator4
-            // 
-            this.oscillator4.BackColor = System.Drawing.Color.Purple;
-            this.oscillator4.Location = new System.Drawing.Point(283, 13);
-            this.oscillator4.Name = "oscillator4";
-            this.oscillator4.Size = new System.Drawing.Size(264, 100);
-            this.oscillator4.TabIndex = 8;
-            this.oscillator4.TabStop = false;
-            this.oscillator4.Text = "oscillator4";
-            // 
-            // oscillator3
-            // 
-            this.oscillator3.BackColor = System.Drawing.Color.Purple;
-            this.oscillator3.Location = new System.Drawing.Point(12, 225);
-            this.oscillator3.Name = "oscillator3";
-            this.oscillator3.Size = new System.Drawing.Size(264, 100);
-            this.oscillator3.TabIndex = 8;
-            this.oscillator3.TabStop = false;
-            this.oscillator3.Text = "oscillator3";
             // 
             // oscillator2
             // 
@@ -87,24 +53,10 @@ namespace Basic_Synth
             this.oscillator1.TabStop = false;
             this.oscillator1.Text = "oscillator1";
             // 
-            // oscillator9
-            // 
-            this.oscillator9.BackColor = System.Drawing.Color.Purple;
-            this.oscillator9.Location = new System.Drawing.Point(283, 225);
-            this.oscillator9.Name = "oscillator9";
-            this.oscillator9.Size = new System.Drawing.Size(264, 100);
-            this.oscillator9.TabIndex = 9;
-            this.oscillator9.TabStop = false;
-            this.oscillator9.Text = "oscillator6";
-            // 
             // BasicSynth
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(607, 363);
-            this.Controls.Add(this.oscillator9);
-            this.Controls.Add(this.oscillator5);
-            this.Controls.Add(this.oscillator4);
-            this.Controls.Add(this.oscillator3);
             this.Controls.Add(this.oscillator2);
             this.Controls.Add(this.oscillator1);
             this.KeyPreview = true;
@@ -119,13 +71,9 @@ namespace Basic_Synth
 
         private Oscillator oscillator1;
         private Oscillator oscillator2;
-        private Oscillator oscillator3;
-        private Oscillator oscillator4;
-        private Oscillator oscillator5;
         private Oscillator oscillator6;
         private Oscillator oscillator7;
         private Oscillator oscillator8;
-        private Oscillator oscillator9;
     }
 }
 

@@ -30,7 +30,6 @@ namespace Basic_Synth
             float[] frequencies = new float[50] { 123.47f, 130.8f, 138.6f, 146.8f, 155.6f, 164.8f, 174.6f, 185.0f, 196.0f, 207.7f, 220.0f, 233.1f, 246.9f, 261.6f, 277.2f, 293.7f, 311.1f, 329.6f, 349.2f, 370.0f, 392.0f, 415.3f, 440.0f, 466.2f, 493.9f, 523.3f, 554.4f, 587.3f, 622.3f, 659.3f, 698.5f, 740.0f, 784.0f, 830.6f, 880.0f, 932.3f, 987.8f, 1047.50f, 1109f, 1175f, 1245f, 1319f, 1397f, 1480f, 1568f, 1661f, 1760f, 1865f, 1976f, 2093f };
             string[] keys = new string[25] { "z", "s", "x", "d", "c", "v", "g", "b", "h", "n", "j", "m", "q", "d2", "w", "d3", "e", "r", "d5", "t", "d6", "y", "d7", "u", "i" };
             int oscillatorsCount = oscillators.Count();
-            int k = 0;
 
             foreach (Oscillator oscillator in this.Controls.OfType<Oscillator>())
             {
@@ -66,9 +65,10 @@ namespace Basic_Synth
                         break;
                     case WaveForm.Triangle:
                         tempSample = -short.MaxValue;
+                        ampStep *= 2;
                         for (int i = 0; i < SAMPLE_RATE; i++)
                         {
-                            if(Math.Abs(tempSample + ampStep) > short.MaxValue)
+                            if(Math.Abs(tempSample + ampStep) > short.MaxValue) 
                             {
                                 ampStep = (short)-ampStep;
                             }
@@ -83,7 +83,6 @@ namespace Basic_Synth
                         }
                         break;
                 }
-                k++;
             }
             Buffer.BlockCopy(wave, 0, binaryWave, 0, wave.Length * sizeof(short));
             using (MemoryStream memoryStream = new MemoryStream())
